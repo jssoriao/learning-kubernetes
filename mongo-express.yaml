@@ -75,6 +75,7 @@ spec:
       http:
         paths:
           - pathType: Prefix
+            # Remove `path` to implement catchall
             path: "/"
             backend:
               service:
