@@ -50,3 +50,22 @@ spec:
       port: 8081
       targetPort: 8081
       nodePort: 30000
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: mongo-express-ingress
+#   labels:
+#     name: mongo-express-ingress
+# spec:
+#   rules:
+#     - host: mymongoexpress.com
+#       http:
+#         paths:
+#           - pathType: Prefix
+#             path: "/"
+#             backend:
+#               service:
+#                 name: <Service>
+#                 port:
+#                   number: <Port>
