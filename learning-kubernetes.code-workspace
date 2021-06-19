@@ -1,11 +1,11 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "api"
-	}
-],
+    {
+      "path": "."
+    },
+    {
+      "path": "app"
+    }
+  ],
   "settings": {}
 }
