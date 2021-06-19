@@ -50,3 +50,13 @@ Running the `kubectl create secret` command will automatically run base64 the co
 ```bash
 base64 <infile>
 ```
+
+We can also create a secret without an existing docker config file.
+
+```bash
+kubectl create secret docker-registry <secret_name> \
+--docker-server=<your-registry-server> \
+--docker-username=<your-name> \
+--docker-password=<your-pword> \
+--docker-email=<your-email>
+```
