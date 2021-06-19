@@ -24,3 +24,29 @@ Download the kubeconfig file from Linode. Set the path of the downloaded yaml fi
 ```bash
 export KUBECONFIG=<path_to_kubeconfig_yaml_file>
 ```
+
+## Create k8s secret for the private registry credentials
+
+Use kubectl to create the secret or use a yaml file.
+
+```bash
+kubectl create secret generic <secret_name> \
+--from-file=.dockerconfigjson=.docker/config.json \
+--type=kubernetes.io/dockerconfigjson
+```
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: <secret_name>
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: <base64_encoded_docker_config_file>
+```
+
+Running the `kubectl create secret` command will automatically run base64 the contents of the docker config file. Else, use the bash base64 command
+
+```bash
+base64 <infile>
+```
