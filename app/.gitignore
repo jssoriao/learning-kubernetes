@@ -1,0 +1,6 @@
+.terraform/
+*.sh
+*.tfstate
+*.tfstate.backup
+*secret.yaml
+*kubeconfig.yaml
