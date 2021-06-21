@@ -6,6 +6,7 @@ metadata:
     name: myapp-ingress
   namespace: myapp
 spec:
+  ingressClassName: nginx
   rules:
     - host: myapp.com
       http:
